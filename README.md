@@ -1,6 +1,6 @@
 # Drpetappointment
 
-Intital Project is created using the @Input and @Output decorator. This example show you how you can share the data between child and parent directives and components.
+This example show you how you can use the signals in service and components.
   
 
 For more optiomization check other branches...

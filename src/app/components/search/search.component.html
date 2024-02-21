@@ -21,24 +21,24 @@
       <li>
         <a
           class="dropdown-item"
-          (click)="onSortBy({ orderBy: 'petName', orderType: orderType })"
-          [ngClass]="{ active: orderBy === 'petName' }"
+          (click)="onSortBy({ orderBy: 'petName', orderType: orderType() })"
+          [ngClass]="{ active: orderBy() === 'petName' }"
           >Pet Name</a
         >
       </li>
       <li>
         <a
           class="dropdown-item"
-          (click)="onSortBy({ orderBy: 'aptDate', orderType: orderType })"
-          [ngClass]="{ active: orderBy === 'aptDate' }"
+          (click)="onSortBy({ orderBy: 'aptDate', orderType: orderType() })"
+          [ngClass]="{ active: orderBy() === 'aptDate' }"
           >Date</a
         >
       </li>
       <li>
         <a
           class="dropdown-item"
-          (click)="onSortBy({ orderBy: 'ownerName', orderType: orderType })"
-          [ngClass]="{ active: orderBy === 'ownerName' }"
+          (click)="onSortBy({ orderBy: 'ownerName', orderType: orderType() })"
+          [ngClass]="{ active: orderBy() === 'ownerName' }"
           >Owner</a
         >
       </li>
@@ -46,16 +46,16 @@
       <li>
         <a
           class="dropdown-item"
-          (click)="onSortBy({ orderBy: orderBy, orderType: 'asc' })"
-          [ngClass]="{ active: orderType === 'asc' }"
+          (click)="onSortBy({ orderBy: orderBy(), orderType: 'asc' })"
+          [ngClass]="{ active: orderType() === 'asc' }"
           >Asc</a
         >
       </li>
       <li>
         <a
           class="dropdown-item"
-          (click)="onSortBy({ orderBy: orderBy, orderType: 'desc' })"
-          [ngClass]="{ active: orderType === 'desc' }"
+          (click)="onSortBy({ orderBy: orderBy(), orderType: 'desc' })"
+          [ngClass]="{ active: orderType() === 'desc' }"
           >Desc</a
         >
       </li>

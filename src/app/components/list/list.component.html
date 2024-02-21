@@ -1,9 +1,9 @@
 <div class="row justify-content-center mt-3">
-    @for (item of iappointmentList; track $index) {
+    @for (item of iappointmentList(); track $index) {
   <div class="col-md-8 col-sm-10 mb-3">
     <div class="card flex-row">
       <div class="card-body align-items-start flex-grow-0">
-        <button type="button" class="btn btn-danger" (click)="onDelete(item)">
+        <button type="button" class="btn btn-danger" (click)="onDelete(item.aptId)">
             <fa-icon [icon]="faTimes"></fa-icon>
         </button>
       </div>

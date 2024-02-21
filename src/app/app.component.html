@@ -3,11 +3,9 @@
 </header>
 <main class="bg-white">
   <div class="container pt-3">
-    <app-add (addAptEvent)="onAddApt($event)" ></app-add>
-    <app-search (onSearchEvent)="searchApt($event)" (orderEvt)="orderApt($event)"
-    [orderBy]="orderBy"
-    [orderType]="orderType"></app-search>
-    <app-list [iappointmentList]="filtredAppointmentList" (deleteEvent)="onDeleteApt($event)" (updateEvent)="onUpdateApt($event)"></app-list>
+    <app-add></app-add>
+    <app-search></app-search>
+    <app-list></app-list>
   </div>
 </main>
 <footer class="container d-flex text-white py-2">
