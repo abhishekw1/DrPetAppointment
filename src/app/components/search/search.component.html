@@ -1,0 +1,64 @@
+<div class="input-group my-3">
+  <input
+    type="text"
+    class="form-control"
+    placeholder="Recipient's username"
+    aria-label="Recipient's username"
+    aria-describedby="basic-addon2"
+    [(ngModel)]="query"
+    (keyup)="handleQuery(query)"
+  />
+  <div class="input-group-text p-0">
+    <button
+      type="button"
+      class="btn btn-search dropdown-toggle text-white"
+      data-bs-toggle="dropdown"
+      aria-expanded="false"
+    >
+      Sort by:
+    </button>
+    <ul class="dropdown-menu">
+      <li>
+        <a
+          class="dropdown-item"
+          (click)="onSortBy({ orderBy: 'petName', orderType: orderType })"
+          [ngClass]="{ active: orderBy === 'petName' }"
+          >Pet Name</a
+        >
+      </li>
+      <li>
+        <a
+          class="dropdown-item"
+          (click)="onSortBy({ orderBy: 'aptDate', orderType: orderType })"
+          [ngClass]="{ active: orderBy === 'aptDate' }"
+          >Date</a
+        >
+      </li>
+      <li>
+        <a
+          class="dropdown-item"
+          (click)="onSortBy({ orderBy: 'ownerName', orderType: orderType })"
+          [ngClass]="{ active: orderBy === 'ownerName' }"
+          >Owner</a
+        >
+      </li>
+      <li><hr class="dropdown-divider" /></li>
+      <li>
+        <a
+          class="dropdown-item"
+          (click)="onSortBy({ orderBy: orderBy, orderType: 'asc' })"
+          [ngClass]="{ active: orderType === 'asc' }"
+          >Asc</a
+        >
+      </li>
+      <li>
+        <a
+          class="dropdown-item"
+          (click)="onSortBy({ orderBy: orderBy, orderType: 'desc' })"
+          [ngClass]="{ active: orderType === 'desc' }"
+          >Desc</a
+        >
+      </li>
+    </ul>
+  </div>
+</div>

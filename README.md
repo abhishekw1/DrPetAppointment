@@ -1,5 +1,10 @@
 # Drpetappointment
 
+Intital Project is created using the @Input and @Output decorator. This example show you how you can share the data between child and parent directives and components.
+  
+
+For more optiomization check other branches...
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.0.0.
 
 ## Development server
