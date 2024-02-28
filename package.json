@@ -7,8 +7,7 @@
     "build": "ng build",
     "build:prod": "ng build --configuration production --base-href /DrPetAppointment/",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test",
-    "gh-pages":"ng deploy --base-href=/DrPetAppointment/ --name=abhishekw1 --email=abhishek.wadalkar1@gamil.com"
+    "test": "ng test"
   },
   "private": true,
   "dependencies": {
