@@ -18,12 +18,13 @@ jobs:
 
       - name: Install dependencies
         run: npm install
-      
-      - name: Git Credencials 
-        run: git config --global user.email "abhishek.wadalkar1.com" && git config --global user.name "awadalkar1"
-        
-      - name: Build and Deploy for production
-        env:
-           GH_TOKEN: ${{ secrets.GH_TOKEN }}
-        run: npm run gh-pages
+
+      - name: Build for production
+        run: ng build --prod
+
+      - name: Deploy to GitHub Pages
+        uses: actions/deploy-pages@v3
+        with:
+          token: ${{ secrets.GH_TOKEN }}
+          artifact_name: gh-pages 
 
