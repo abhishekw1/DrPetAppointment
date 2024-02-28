@@ -35,7 +35,7 @@ export class AppointmentService {
 
   getAppointment() {
     this.http
-      .get<PetAppointmentType[]>('../assets/data.json')
+      .get<PetAppointmentType[]>('src/assets/data.json')
       .subscribe((data: PetAppointmentType[]) => {
         this.appointmentListSignal.set(data);
       });
