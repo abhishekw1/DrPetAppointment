@@ -2,8 +2,9 @@ name: Deploy to GitHub Pages
 
 on:
   push:
-    branches: [ actions-demo ]  # Trigger on pushes to the main branch
-
+    branches: [actions-demo] # Trigger on pushes to the main branch
+permissions:
+  actions: write
 jobs:
   deploy:
     runs-on: ubuntu-latest
@@ -24,9 +25,8 @@ jobs:
 
       - name: Deploy to GitHub Pages
         uses: actions/deploy-pages@v3
-        env: 
+        env:
           token: ${{ secrets.GH_TOKEN }}
         with:
           token: ${{ secrets.GH_TOKEN }}
-          artifact_name: gh-pages 
-
+          artifact_name: gh-pages
