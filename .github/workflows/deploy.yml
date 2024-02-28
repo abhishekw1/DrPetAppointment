@@ -24,6 +24,8 @@ jobs:
 
       - name: Deploy to GitHub Pages
         uses: actions/deploy-pages@v3
+        env: 
+          token: ${{ secrets.GH_TOKEN }}
         with:
           token: ${{ secrets.GH_TOKEN }}
           artifact_name: gh-pages 
