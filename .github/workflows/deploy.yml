@@ -19,6 +19,6 @@ jobs:
       - name: Install dependencies
         run: npm install
 
-      - name: Build for production
-        run: ng deploy --base-href=/DrPetAppointment/
+      - name: Build and Deploy for production
+        run: ng deploy --base-href=https://abhishekw1.github.io/DrPetAppointment/  --email=abhishek.wadalkar1@gamil.com
 
