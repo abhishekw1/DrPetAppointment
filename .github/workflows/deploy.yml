@@ -23,5 +23,7 @@ jobs:
         run: git config --global user.email "abhishek.wadalkar1.com" && git config --global user.name "awadalkar1"
         
       - name: Build and Deploy for production
+        env:
+           GH_TOKEN: ${{ secrets.GH_TOKEN }}
         run: npm run gh-pages
 
