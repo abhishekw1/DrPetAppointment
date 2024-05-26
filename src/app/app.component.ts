@@ -4,9 +4,8 @@ import { RouterOutlet } from '@angular/router';
 import { AddComponent } from './components/add/add.component';
 import { SearchComponent } from './components/search/search.component';
 import { ListComponent } from './components/list/list.component';
-import { without, findIndex } from 'lodash';
-import { OrderType, PetAppointmentType } from './app.types';
 import { AppointmentService } from './services/appointment.service';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-root',
@@ -17,6 +16,7 @@ import { AppointmentService } from './services/appointment.service';
     AddComponent,
     SearchComponent,
     ListComponent,
+    FormsModule,
   ],
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
