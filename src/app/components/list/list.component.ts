@@ -1,8 +1,9 @@
-import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { ChangeDetectionStrategy, Component, EventEmitter, Input, Signal, Output, inject, input } from '@angular/core';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { faTimes } from '@fortawesome/free-solid-svg-icons';
 import { DatePipe } from '@angular/common';
 import { PetAppointmentType } from '../../app.types';
+import { AppointmentService } from '../../services/appointment.service';
 
 @Component({
   selector: 'app-list',
@@ -10,17 +11,18 @@ import { PetAppointmentType } from '../../app.types';
   imports: [FontAwesomeModule, DatePipe],
   templateUrl: './list.component.html',
   styleUrl: './list.component.scss',
+  changeDetection:ChangeDetectionStrategy.OnPush
 })
 export class ListComponent {
-  @Input() iappointmentList: PetAppointmentType[] = [];
-  @Output() deleteEvent = new EventEmitter<PetAppointmentType>();
-  @Output() updateEvent = new EventEmitter();
   faTimes = faTimes;
-
-  onDelete(item: PetAppointmentType) {
-    this.deleteEvent.emit(item);
+  appointmentService = inject(AppointmentService);
+  iappointmentList: Signal<PetAppointmentType[]> = this.appointmentService.filtredAppointmentListSignal;
+  
+  onDelete(aptId: number) {
+    this.appointmentService.deleteApt(aptId);
   }
   handleUpdate(upApt: PetAppointmentType, labelName: string, newValue: string) {
-    this.updateEvent.emit({ upApt: upApt, labelName: labelName, newValue: newValue });
+    upApt[labelName] = newValue;
+    this.appointmentService.updateApt(upApt);
   }
 }
